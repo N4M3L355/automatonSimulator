@@ -6,7 +6,7 @@
     <meta name="description" content="Finite State Machine simulator for Deterministic Finite Automata, Non-Deterministic Finite Automata, and Push-Down Automata." />
 		<meta name="author" content="Kyle Dickerson" />
 
-    <title>Automaton Simulator</title>
+    <title>Simulátor Automatu</title>
     <link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.10.0.custom.min.css" />
     <link rel="stylesheet" type="text/css" href="css/fsm.css" />
     <link rel="shortcut icon" href="favicon.ico" />
@@ -30,33 +30,33 @@
 
       <hr />
       <h5>
-        Bulk Testing
+        Testovať reťazce
         <button id="bulkTestBtn" class="image" style="margin-left:15px;" onclick="fsm.test({accept:$('#acceptStrings').val().split('\n'), reject:$('#rejectStrings').val().split('\n')});" title="Run Bulk Tests"><img src="images/empty.png" /></button>
       </h5>
-      <label>Accept (one per line):</label>
+      <label>Akceptovať (jeden na riadok):</label>
       <textarea id="acceptStrings" style="margin-bottom:5px;"></textarea>
       <br />
-      <label>Reject (one per line):</label>
+      <label>Zamietnuť (jeden na riadok):</label>
       <textarea id="rejectStrings"></textarea>
     </div>
 
     <div id="mainHolder">
       <h1>
-          Automaton Simulator:
+          Simulátor automatu:
           <button class="delegate" disabled="disabled" title="Deterministic Finite Automaton">DFA</button>
           <button class="delegate" title="Non-Deterministic Finite Automaton">NFA</button>
           <button class="delegate" title="Pushdown Automaton">PDA</button>
 
           <button id="resetBtn" onclick="fsm.reset();" class="image" title="Reset"><img src="images/empty.png" /></button>
           <select id="examples">
-            <option value="">Examples</option>
+            <option value="">Príklady</option>
           </select>
       </h1>
       <div id="machineGraph">
           <div id="dfaStatus" style="display:none;"></div>
       </div>
       <h5 id="bulkResultHeader" style="text-align:left;">
-        Test Results:
+        Výsledky testov:
         <span id="fsmDebugInputStatus" class="fsmStatus" style="display:none;">
           <span class="consumedInput"></span>
           <span class="currentInput"></span>
@@ -74,11 +74,11 @@
   	      <img src="images/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;vertical-align:middle;"/>
   	    </a> --
 
-        <a href="https://github.com/kdickerson/automatonSimulator">On Github</a>&nbsp;&nbsp;
-  	    Tools:
+        <a href="https://github.com/N4M3L355/automatonSimulator">Github</a>&nbsp;&nbsp;
+  	    Nástroje:
         <a href="http://jquery.com/">jQuery</a>&nbsp;&nbsp;
         <a href="https://github.com/jsplumb/jsplumb">jsPlumb</a>&nbsp;&nbsp;
-        Icons:
+        Icony:
         <a href="http://www.fatcow.com/free-icons">FatCow</a>
 			</div>
     </div>
@@ -86,9 +86,9 @@
     <div id="saveLoadDialog">
       <div id="saveLoadTabs">
         <ul>
-          <li><a href="#browserStorage">Browser Storage</a></li>
+          <li><a href="#browserStorage">Prehliadač(Browser storage)</a></li>
           <li><a href="#plaintext">Plaintext</a></li>
-          <li><a href="#shareableURL">Shareable URL</a></li>
+          <li><a href="#shareableURL">URL na zdieľanie</a></li>
         </ul>
         <div id="browserStorage">
           <input id="machineName" type="text" value="Machine Name" title="Machine Name" />
@@ -112,20 +112,5 @@
     <script src="js/dfa_delegate.js"></script>
     <script src="js/nfa_delegate.js"></script>
     <script src="js/pda_delegate.js"></script>
-    <!-- Piwik Analytics -->
-		<script type="text/javascript">
-			var _paq = _paq || [];
-			_paq.push(["trackPageView"]);
-			_paq.push(["enableLinkTracking"]);
-
-			(function() {
-				var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.serindu.com/";
-				_paq.push(["setTrackerUrl", u+"piwik.php"]);
-				_paq.push(["setSiteId", "1"]);
-				var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
-				g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
-			})();
-		</script>
-		<!-- End Piwik Code -->
   </body>
 </html>
