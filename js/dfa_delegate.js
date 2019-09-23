@@ -27,14 +27,14 @@ var dfa_delegate = (function() {
     var inputChar = $('#dfa_dialog_readCharTxt').val();
     if (inputChar.length > 1) {inputChar = inputChar[0];}
     if (inputChar.length === 0) {
-      alert("Deterministic Finite Automaton cannot have empty-string transition.");
+      alert("Recept nemôže mať prázdny prechod.");
       return;
     }
     
     if (update) {
       dfa.removeTransition(dialogActiveConnection.sourceId, dialogActiveConnection.getLabel(), dialogActiveConnection.targetId);
     } else if (dfa.hasTransition(dialogActiveConnection.sourceId, inputChar)) {
-      alert(dialogActiveConnection.sourceId + " already has a transition for " + inputChar);
+      alert(dialogActiveConnection.sourceId + " už má prechod pre znak " + inputChar);
       return;
     }
     
@@ -60,7 +60,7 @@ var dfa_delegate = (function() {
 
   var makeDialog = function() {
     dialogDiv = $('<div></div>', {style:'text-align:center;'});
-    $('<div></div>', {style:'font-size:small;'}).html('Empty transitions not allowed for DFAs<br />Read from Input').appendTo(dialogDiv);
+    $('<div></div>', {style:'font-size:small;'}).html('Recept nemôže mať prázdne prechody<br />Načítať zo vstupu').appendTo(dialogDiv);
     $('<span></span>', {id:'dfa_dialog_stateA', 'class':'tranStart'}).appendTo(dialogDiv);
     $('<input />', {id:'dfa_dialog_readCharTxt', type:'text', maxlength:1, style:'width:30px;text-align:center;'})
       .val('A')
@@ -74,7 +74,7 @@ var dfa_delegate = (function() {
     dialogDiv.dialog({
       dialogClass: "no-close",
       autoOpen: false,
-      title: 'Set Transition Character',
+      title: 'Nastaviť znak prechodu',
       height: 220,
       width: 350,
       modal: true,

@@ -3,10 +3,10 @@
   <head>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8">
-    <meta name="description" content="Finite State Machine simulator for Deterministic Finite Automata, Non-Deterministic Finite Automata, and Push-Down Automata." />
+    <meta name="description" content="Simulátor na automaty(teória automatov)" />
 		<meta name="author" content="Kyle Dickerson" />
 
-    <title>Simulátor Automatu</title>
+    <title>Simulátor Receptomatu</title>
     <link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.10.0.custom.min.css" />
     <link rel="stylesheet" type="text/css" href="css/fsm.css" />
     <link rel="shortcut icon" href="favicon.ico" />
@@ -30,19 +30,19 @@
 
       <hr />
       <h5>
-        Testovať reťazce
+        Testovať recepty
         <button id="bulkTestBtn" class="image" style="margin-left:15px;" onclick="fsm.test({accept:$('#acceptStrings').val().split('\n'), reject:$('#rejectStrings').val().split('\n')});" title="Run Bulk Tests"><img src="images/empty.png" /></button>
       </h5>
-      <label>Akceptovať (jeden na riadok):</label>
+      <label>Správne recepty (jeden na riadok):</label>
       <textarea id="acceptStrings" style="margin-bottom:5px;"></textarea>
       <br />
-      <label>Zamietnuť (jeden na riadok):</label>
+      <label>Nesprávne recepty (jeden na riadok):</label>
       <textarea id="rejectStrings"></textarea>
     </div>
 
     <div id="mainHolder">
       <h1>
-          Simulátor automatu:
+          Simulátor Receptomatu:
           <button class="delegate" disabled="disabled" title="Deterministic Finite Automaton">DFA</button>
           <button class="delegate" title="Non-Deterministic Finite Automaton">NFA</button>
           <button class="delegate" title="Pushdown Automaton">PDA</button>
@@ -68,8 +68,8 @@
 
     <div id="footer">
 			<div>
-	      <a href="http://www.linkedin.com/in/kyledickerson/">Kyle Dickerson</a> --
-        kyle.dickerson@gmail.com
+	      <a href="http://www.linkedin.com/in/kyledickerson/">Adam Král</a> --
+        adam.kral@trojsten.com
   	    <a href="//plus.google.com/111960029093387822677?prsrc=3" rel="publisher" style="text-decoration:none;">
   	      <img src="images/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;vertical-align:middle;"/>
   	    </a> --
@@ -88,10 +88,10 @@
         <ul>
           <li><a href="#browserStorage">Prehliadač(Browser storage)</a></li>
           <li><a href="#plaintext">Plaintext</a></li>
-          <li><a href="#shareableURL">URL na zdieľanie</a></li>
+          <li><a href="#shareableURL">Adresa(URL) na zdieľanie</a></li>
         </ul>
         <div id="browserStorage">
-          <input id="machineName" type="text" value="Machine Name" title="Machine Name" />
+          <input id="machineName" type="text" value="Názov receptomatu" title="Názov receptomatu" />
           <div>
             <ul id="storedMachines"></ul>
           </div>
