@@ -15,41 +15,41 @@
 
   <body>
     <div id="tools">
-      <div style="text-align:center;">
-        <button id="saveBtn" onclick="fsm.save();" class="image" title="Save"><i class="fas fa-save"></i></button>
-        <button id="loadBtn" onclick="fsm.load();" class="image" title="Load" style="margin-right: 20px;"><i class="fas fa-upload"></i></button>
-        <button id="addStateBtn" onclick="fsm.addState();" class="image" title="Add State"><i class="fas fa-plus-circle"></i></button>
+      <div style="display: flex; flex-direction: column">
+        <button style="flex: 1;" id="saveBtn" onclick="fsm.save();" class="image">Uložiť<i class="fas fa-save"></i></button>
+        <button style="flex: 1;" id="loadBtn" onclick="fsm.load();" class="image">Načítať<i class="fas fa-upload"></i></button>
+        <button style="flex: 1;" id="addStateBtn" onclick="fsm.addState();" class="image">Pridať stav<i class="fas fa-plus-circle"></i></button>
       </div>
-      <label>Test / Debug:</label>
+      <hr />
+      <label>Otestovať na vlastnom vstupe</label>
       <input id="testString" type="text" value="" /><br />
-      <div style="text-align:center;">
-        <button id="testBtn" onclick="fsm.test($('#testString').val());" class="image" title="Test"><i class="fas fa-play"></i></button>
-        <button id="stopBtn" onclick="fsm.debugStop();" disabled="disabled" class="image" title="Stop Debug"><i class="fas fa-stop"></i></button>
-        <button id="debugBtn" onclick="fsm.debug($('#testString').val());" class="image" title="Start/Step Debug"><i class="fas fa-step-forward"></i></button>
+      <div style="display: flex; flex-direction: column">
+        <button style="flex: 1;" id="testBtn" onclick="fsm.test($('#testString').val());" class="image">Otestovať<i class="fas fa-play"></i></button>
+        <button style="flex: 1;" id="stopBtn" onclick="fsm.debugStop();" disabled="disabled" class="image">Skončiť krokovanie<i class="fas fa-stop"></i></button>
+        <button style="flex: 1;" id="debugBtn" onclick="fsm.debug($('#testString').val());" class="image">Krokovať<i class="fas fa-step-forward"></i></button>
       </div>
-      <div id="testResult">&nbsp;</div>
+      <div style="display: none" id="testResult">&nbsp;</div>
 
       <hr />
-      <h5>
-        Testovať recepty
-        <button id="bulkTestBtn" class="image" style="margin-left:15px;" onclick="fsm.test({accept:$('#acceptStrings').val().split('\n'), reject:$('#rejectStrings').val().split('\n')});" title="Run Bulk Tests"><i class="fas fa-check-double"></i></button>
-      </h5>
-      <label>Správne recepty (jeden na riadok):</label>
+      <label>Správne recepty (jeden na riadok)</label>
       <textarea id="acceptStrings" style="margin-bottom:5px;"></textarea>
       <br />
-      <label>Nesprávne recepty (jeden na riadok):</label>
+      <label>Nesprávne recepty (jeden na riadok)</label>
       <textarea id="rejectStrings"></textarea>
+      <h5>
+        <button id="bulkTestBtn" class="image" style="width: 100%" onclick="fsm.test({accept:$('#acceptStrings').val().split('\n'), reject:$('#rejectStrings').val().split('\n')});">Otestovať recepty<i class="fas fa-vials"></i></button>
+      </h5>
     </div>
 
     <div id="mainHolder">
       <h1>
-          Simulátor Receptomatu:
-          <button class="delegate" disabled="disabled" title="Deterministic Finite Automaton">DFA</button>
-          <button class="delegate" title="Non-Deterministic Finite Automaton">NFA</button>
-          <button class="delegate" title="Pushdown Automaton">PDA</button>
+          Simulátor Receptomatu
+          <button style="display: none" class="delegate" disabled="disabled" title="Deterministic Finite Automaton">DFA</button>
+          <button style="display: none" class="delegate" title="Non-Deterministic Finite Automaton">NFA</button>
+          <button style="display: none" class="delegate" title="Pushdown Automaton">PDA</button>
 
-          <button id="resetBtn" onclick="fsm.reset();" class="image" title="Reset"><i class="fas fa-power-off"></i></button>
-          <select id="examples">
+          <button style="position: absolute; top: 40px; right: 15px; z-index: 100;" id="resetBtn" onclick="fsm.reset();" class="image">Vymazať receptomat<i class="fas fa-trash"></i></button>
+          <select id="examples" style="display: none;">
             <option value="">Príklady</option>
           </select>
       </h1>
@@ -57,7 +57,7 @@
           <div id="dfaStatus" style="display:none;"></div>
       </div>
       <h5 id="bulkResultHeader" style="text-align:left;">
-        Výsledky testov:
+        Výsledky testov
         <span id="fsmDebugInputStatus" class="fsmStatus" style="display:none;">
           <span class="consumedInput"></span>
           <span class="currentInput"></span>
@@ -67,30 +67,17 @@
       <div id="resultConsole"></div>
     </div>
 
-    <div id="footer">
-			<div>
-	      <a href="http://www.linkedin.com/in/kyledickerson/">Adam Král</a> --
-        adam.kral@trojsten.com
-
-        <a href="https://github.com/N4M3L355/automatonSimulator">Github</a>&nbsp;&nbsp;
-        </div>
+    <div id="footer" styl="text">
+      Ak máš nejaké otázky alebo sa ti zdá, že niečo nefunguje, napíš mail na <b>adam.kral@trojsten.com</b>
     </div>
 
     <div id="saveLoadDialog">
-      <div id="saveLoadTabs">
+      <div id="saveLoadTabs" style="border: none;">
         <ul>
-          <li><a href="#browserStorage">Prehliadač(Browser storage)</a></li>
-          <li><a href="#plaintext">Plaintext</a></li>
-          <li><a href="#shareableURL">Adresa(URL) na zdieľanie</a></li>
+          <li><a href="#plaintext">Receptomat</a></li>
         </ul>
-        <div id="browserStorage">
-          <input id="machineName" type="text" value="Názov receptomatu" title="Názov receptomatu" />
-          <div>
-            <ul id="storedMachines"></ul>
-          </div>
-        </div>
         <div id="plaintext"><textarea></textarea></div>
-        <div id="shareableURL"><textarea></textarea></div>
+        <div style="display: none" id="shareableURL"><textarea></textarea></div>
       </div>
     </div>
 
