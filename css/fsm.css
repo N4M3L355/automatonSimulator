@@ -6,7 +6,7 @@ h1 {
   margin-top: 0px;
   margin-bottom: 2px;
   text-align: center;
-  font-size: 14pt;
+  font-size: 16pt;
   font-weight: normal;
   letter-spacing: 3px;
   word-spacing: 20px;
@@ -165,7 +165,7 @@ div.delete:hover {
 .fsmStatus {
   padding-left: 2px;
   padding-right: 2px;
-  font-size: 9pt;
+  font-size: 10pt;
   letter-spacing: 2px;
 }
 
@@ -185,8 +185,7 @@ div.delete:hover {
 #resultConsole {
   font-size: small;
   height: 180px;
-  border-bottom: 1px solid #aaa;
-  border-left: 1px solid #aaa;
+  border: 1px solid #aaa;
   overflow: auto;
 }
 
@@ -208,7 +207,7 @@ div.delete:hover {
 
 #footer {
   clear: both;
-  font-size: 8pt;
+  font-size: 10pt;
   text-align: center;
   margin-top: 2px;
 }
@@ -222,6 +221,7 @@ div.delete:hover {
 .loadSave .ui-dialog-buttonpane {
   padding: .05em;
   margin-top: .1em;
+  border: none;
 }
 
 .loadSave .ui-tabs, .loadSave .ui-tabs-panel, .loadSave .ui-dialog-content textarea {
@@ -325,3 +325,7 @@ img.delete:hover {background-position: 0 -176px;}
 
 #resetBtn img {background-position: 0 -308px;}
 #resetBtn:disabled img {background-position: 0 -330px;}
+
+.fas {
+  margin-left: 8px;
+}

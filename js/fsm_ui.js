@@ -475,7 +475,7 @@ var fsm = (function() {
 				}
 			};
 
-			saveLoadDialog.dialog('option', 'title', 'Save Automaton');
+			saveLoadDialog.dialog('option', 'title', 'Uložiť receptomat');
 			$('#saveLoadTabs').on('tabsactivate', buttonUpdater);
 			buttonUpdater(null, {newPanel: $('#saveLoadTabs div').eq($('#saveLoadTabs').tabs('option', 'active'))});
 
