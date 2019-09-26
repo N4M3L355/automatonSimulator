@@ -253,10 +253,13 @@ span.tranEnd:before {
 
 /* Local Storage Widget */
 #machineName {
-  width: 98%;
+  margin: 20px 0 10px 15px;
+  padding: 8px;
+  width: 90%;
 }
 
 #storedMachines {
+  margin: 0px;
   max-height: 250px;
 }
 

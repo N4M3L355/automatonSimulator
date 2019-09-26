@@ -426,8 +426,8 @@ var fsm = (function() {
 			saveLoadDialog.dialog('option', {
 				title: 'Load Automaton',
 				buttons: {
-					Cancel: function(){saveLoadDialog.dialog('close');},
-					Load: function(){if (finishLoading()) {saveLoadDialog.dialog('close');}}
+					Zavrieť: function(){saveLoadDialog.dialog('close');},
+					Načítať: function(){if (finishLoading()) {saveLoadDialog.dialog('close');}}
 				}
 			});
 			$('#saveLoadTabs').off('tabsactivate');
@@ -463,14 +463,14 @@ var fsm = (function() {
 			var buttonUpdater = function(event, ui) {
 				if (ui.newPanel.attr('id') === 'browserStorage') {
 					saveLoadDialog.dialog('option', 'buttons', {
-						Cancel: function(){saveLoadDialog.dialog('close');},
-						Save: function(){if (finishSaving()) {saveLoadDialog.dialog('close');}}
+						Zavrieť: function(){saveLoadDialog.dialog('close');},
+						Uložiť: function(){if (finishSaving()) {saveLoadDialog.dialog('close');}}
 					});
 				} else if (ui.newPanel.attr('id') === 'plaintext' || ui.newPanel.attr('id') === 'shareableURL') {
 					ui.newPanel.find('textarea').select();
 					saveLoadDialog.dialog('option', 'buttons', {
-						Copy: function(){ui.newPanel.find('textarea').select();document.execCommand('copy')},
-						Close: function(){saveLoadDialog.dialog('close');}
+						Zavrieť: function(){saveLoadDialog.dialog('close')},
+						Kopírovať: function(){ui.newPanel.find('textarea').select();document.execCommand('copy')}
 					});
 				}
 			};
