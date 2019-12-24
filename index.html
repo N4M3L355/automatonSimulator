@@ -74,8 +74,15 @@
     <div id="saveLoadDialog">
       <div id="saveLoadTabs" style="border: none;">
         <ul>
+          <li><a href="#browserStorage">Prehliadač(Browser storage)</a></li>
           <li><a href="#plaintext">Receptomat</a></li>
         </ul>
+        <div id="browserStorage">
+          <input id="machineName" type="text" value="" placeholder="Názov receptomatu" />
+          <div>
+            <ul id="storedMachines"></ul>
+          </div>
+        </div>
         <div id="plaintext"><textarea></textarea></div>
         <div style="display: none" id="shareableURL"><textarea></textarea></div>
       </div>
